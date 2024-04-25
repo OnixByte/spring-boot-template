@@ -15,4 +15,4 @@
 
 - Install the dependencies you need with _IntelliJ Spring Boot Starter Editor_.
 - Configure this project in `settings.gradle.kts` and change the name of this project.
-- 
+- Rename the package `springboottemplate` and the class `SpringBootTemplateApplication` to `<yourserverpackage>` and `<YourServer>Application`
