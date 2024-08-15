@@ -4,10 +4,11 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
 }
 
-group = "com.onixbyte"
-version = "0.0.1-SNAPSHOT"
+val devkitVersion: String by project
+val artefactVersion: String by project
 
-val codecraftersVersion: String = "1.4.0"
+group = "com.onixbyte"
+version = artefactVersion
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -26,21 +27,19 @@ configurations {
 }
 
 repositories {
-    mavenLocal()
-    maven("https://maven.proxy.ustclug.org/maven2/")
     mavenCentral()
 }
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
-    implementation("cn.org.codecrafters:devkit-core:$codecraftersVersion")
-    implementation("cn.org.codecrafters:devkit-utils:$codecraftersVersion")
-    implementation("cn.org.codecrafters:guid:$codecraftersVersion")
-    implementation("cn.org.codecrafters:simple-jwt-facade:$codecraftersVersion")
-    implementation("cn.org.codecrafters:simple-jwt-authzero:$codecraftersVersion")
-    implementation("cn.org.codecrafters:simple-jwt-spring-boot-starter:$codecraftersVersion")
-    implementation("cn.org.codecrafters:property-guard-spring-boot-starter:$codecraftersVersion")
+    implementation("com.onixbyte:devkit-core:$devkitVersion")
+    implementation("com.onixbyte:devkit-utils:$devkitVersion")
+    implementation("com.onixbyte:guid:$devkitVersion")
+    implementation("com.onixbyte:simple-jwt-facade:$devkitVersion")
+    implementation("com.onixbyte:simple-jwt-authzero:$devkitVersion")
+    implementation("com.onixbyte:simple-jwt-spring-boot-starter:$devkitVersion")
+    implementation("com.onixbyte:property-guard-spring-boot-starter:$devkitVersion")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
