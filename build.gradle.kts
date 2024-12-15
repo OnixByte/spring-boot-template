@@ -1,10 +1,9 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.2.5"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("org.springframework.boot") version "3.4.0"
+    id("io.spring.dependency-management") version "1.1.6"
 }
 
-val devkitVersion: String by project
 val artefactVersion: String by project
 
 group = "com.onixbyte"
@@ -31,6 +30,8 @@ repositories {
 }
 
 dependencies {
+    val devkitVersion: String by project
+
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.onixbyte:devkit-core:$devkitVersion")
